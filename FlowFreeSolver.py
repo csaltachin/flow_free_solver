@@ -291,28 +291,18 @@ def solve_board(board):
         
 """ Test code """
 
-board1 = Board([["0", "0", "0", "0", "0", "0", "0", "0", "2"],
-                ["0", "0", "0", "0", "0", "0", "0", "0", "0"],
-                ["0", "0", "0", "0", "0", "0", "0", "0", "0"],
-                ["0", "0", "0", "1", "0", "0", "0", "0", "3"],
-                ["0", "0", "0", "0", "0", "0", "0", "0", "5"],
-                ["0", "0", "0", "0", "0", "0", "0", "0", "1"],
-                ["0", "0", "0", "4", "0", "0", "0", "0", "0"],
-                ["0", "3", "0", "0", "0", "0", "0", "0", "0"],
-                ["0", "0", "0", "0", "0", "0", "4", "2", "5"]])
+if __name__ == "__main__":
+     b = get_board_from_input()
+     w, h = board1.width, board1.height
+     print(f"Solving this {w}x{h} board:")
+     print_state(State(board1))
+     print("Thinking...")
 
+     t0 = time.time()
+     f1 = solve_board(board1)
 
-w, h = board1.width, board1.height
-print(f"Solving this {w}x{h} board:")
-print_state(State(board1))
-print("Thinking...")
-
-t0 = time.time()
-f1 = solve_board(board1)
-
-t1 = time.time() - t0
-h, m, s = t1//3600, (t1//60) % 60, t1%60
-print(f"Done after {h} hours, {m} minutes, {s} seconds.")
-if f1 != None:
-    print_state(f1)
-
+     t1 = time.time() - t0
+     h, m, s = t1//3600, (t1//60) % 60, t1%60
+     print(f"Done after {int(h)} hours, {int(m)} minutes, {round(s, 3)} seconds.")
+     if f1 != None:
+          print_state(f1)
