@@ -217,7 +217,7 @@ def solve_board(board):
         if int(COUNT % 1000000) == 0:
             print(f"{int(COUNT // 1e6)} million states inspected.")
         
-        # Choose state with the highest *depth* (TWEAK THIS)
+        # Choose state with the highest *depth* (TWEAK THIS) (will tweak with PRIORITY QUEUE)
         currentState = max(OPEN, key = lambda s: PRIORITY[s])
         # Remove it from OPEN, PRIORITY
         OPEN.remove(currentState)
@@ -293,6 +293,7 @@ def solve_board(board):
 
 if __name__ == "__main__":
      b = get_board_from_input()
+     board1 = b
      w, h = board1.width, board1.height
      print(f"Solving this {w}x{h} board:")
      print_state(State(board1))
