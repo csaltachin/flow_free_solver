@@ -292,8 +292,7 @@ def solve_board(board):
 """ Test code """
 
 if __name__ == "__main__":
-     b = get_board_from_input()
-     board1 = b
+     board1 = get_board_from_input()
      w, h = board1.width, board1.height
      print(f"Solving this {w}x{h} board:")
      print_state(State(board1))
