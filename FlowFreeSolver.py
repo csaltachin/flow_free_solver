@@ -1,6 +1,6 @@
 """
 Flow Free Solver v1.0
-csaltachin@mit.edu
+csolano@mit.edu
 """
 
 import time
